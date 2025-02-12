@@ -17,6 +17,16 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 cloudinaryConnect();
 
+// Enable CORS
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://full-stack-gym-website-rho.vercel.app/"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
+  })
+);
+
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
@@ -29,15 +39,7 @@ app.use(
   })
 );
 
-// Enable CORS
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://full-stack-gym-website-rho.vercel.app/"],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
-  })
-);
+
 
 //mount the routes
 app.get("/ping", (req, res) => {

@@ -22,7 +22,7 @@ const UsersList = () => {
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching users:", error);
-        setIsLoading(fasle);
+        setIsLoading(false);
       }
     };
     fetchUsers();
