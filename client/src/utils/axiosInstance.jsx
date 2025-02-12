@@ -1,9 +1,10 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL
 // Create an Axios instance
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL, // Update with your API base URL
+  baseURL: `${BASE_URL}/api/v1`, // Update with your API base URL
   withCredentials: true, // Important if using cookies
 });
 
