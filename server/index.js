@@ -32,7 +32,7 @@ app.use(
 // Enable CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://full-stack-gym-website-rho.vercel.app/"],
     credentials: true,
   })
 );
