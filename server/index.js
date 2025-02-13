@@ -19,7 +19,7 @@ cloudinaryConnect();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://full-stack-gym-website-rho.vercel.app",
+  "https://full-stack-gym-website-ashen.vercel.app",
 ];
 
 app.use((req, res, next) => {
