@@ -16,10 +16,7 @@ const AuthForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
-      //.log("Login Data:", {
-        email: formData.email,
-        password: formData.password,
-      });
+        
     } else {
       //.log("Signup Data:", formData);
     }
