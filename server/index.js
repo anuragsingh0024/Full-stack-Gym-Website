@@ -17,23 +17,28 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 cloudinaryConnect();
 
-// Enable CORS
-app.use(
-  cors({
-    origin: ["*"],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
-  })
-);
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://full-stack-gym-website-rho.vercel.app",
+];
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://full-stack-gym-website-rho.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.setHeader("Access-Control-Allow-Credentials", "true");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
   next();
 });
+
+
 
 
 //middlewares
