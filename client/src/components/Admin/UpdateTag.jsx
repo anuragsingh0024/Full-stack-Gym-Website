@@ -21,9 +21,7 @@ const UpdateTag = () => {
       setData(data.memberships);
       setLoading(false);
     } catch (err) {
-      //.log(
-        "Error while fetching memberships data in update tag component"
-      );
+      //.log("Error while fetching memberships:", err);
       setLoading(false);
     }
   };
