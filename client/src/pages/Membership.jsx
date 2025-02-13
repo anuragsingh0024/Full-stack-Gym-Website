@@ -25,10 +25,10 @@ const Membership = () => {
       setIsLoading(true);
       const response = await axiosInstance.get("/admin/all-memberships");
       setData(response.data.memberships);
-      console.log(response);
+      //.log(response);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      //.log(err);
       setIsLoading(false);
     }
   };
@@ -39,7 +39,7 @@ const Membership = () => {
         withCredentials: true,
       });
 
-      // console.log('response in mem: ', response)
+      // //.log('response in mem: ', response)
       setUser(response.data.user);
     } catch (err) {
       toast.error(err?.data?.message);
@@ -49,14 +49,14 @@ const Membership = () => {
   useEffect(() => {
     handleApi();
     if (isloggedin) {
-      console.log("user is log in");
+      //.log("user is log in");
       fetchUser();
     }
   }, []);
 
   // Razorpay payment handler
   const handlePayment = async (membership) => {
-    console.log("user is : ", user);
+    //.log("user is : ", user);
     if (!isloggedin) {
       toast.error("Please log in first !!");
       navigate("/auth/signin");
@@ -70,7 +70,7 @@ const Membership = () => {
     }
     try {
       setIsSubmiting(true);
-      // console.log(membership)
+      // //.log(membership)
       // Create order in backend
       const { data: order } = await axiosInstance.post(
         "/payment/capture-payment",
@@ -80,7 +80,7 @@ const Membership = () => {
         }
       );
 
-      console.log("data is: ", order);
+      //.log("data is: ", order);
       setIsSubmiting(false);
 
       const options = {
@@ -107,7 +107,7 @@ const Membership = () => {
               withCredentials: true,
             }
           );
-          console.log("verify data is : ", data);
+          //.log("verify data is : ", data);
           if (data.success) {
             toast.success("Payment Successful membership activated");
             navigate("/dashboard");
@@ -129,7 +129,7 @@ const Membership = () => {
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (err) {
-      console.error("Error initiating payment:", err.message);
+      //.error("Error initiating payment:", err.message);
       // alert("Something went wrong. Please try again.");
 
       toast.error("Something went wrong");

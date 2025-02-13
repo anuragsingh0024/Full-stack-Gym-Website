@@ -49,7 +49,7 @@ const ResetPassword = () => {
         `/auth/reset-password/${token}`,
         { password: newPassword, token: token }
       );
-      console.log(response.data);
+      //.log(response.data);
       setMessage(response.data.message); // "Password successfully reset"
       if (response.data.success) {
         toast.success("Password reset successfully");

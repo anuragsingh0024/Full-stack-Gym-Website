@@ -18,7 +18,7 @@ const TransactionsTable = () => {
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.error("Error fetching transactions:", error);
+      //.error("Error fetching transactions:", error);
     }
   };
 
@@ -36,7 +36,7 @@ const TransactionsTable = () => {
       fetchTransactions();
       setIsDeleting(false);
     } catch (err) {
-      console.log("Error while deleting transaction: ", err);
+      //.log("Error while deleting transaction: ", err);
       toast.dismiss(loadingToast);
       toast.error("Failed to delete this transaction");
       setIsDeleting(false);

@@ -21,7 +21,7 @@ const UpdateTag = () => {
       setData(data.memberships);
       setLoading(false);
     } catch (err) {
-      console.log(
+      //.log(
         "Error while fetching memberships data in update tag component"
       );
       setLoading(false);
@@ -48,7 +48,7 @@ const UpdateTag = () => {
       handleApi(); // Re-fetch data to update UI
       setOpenModal(false); // Close the modal after editing
     } catch (err) {
-      console.log("Error while editing tag:", err);
+      //.log("Error while editing tag:", err);
       alert("Failed to edit tag");
     }
   };
@@ -66,7 +66,7 @@ const UpdateTag = () => {
       toast.error(response.data.message);
       handleApi(); // Re-fetch data to update UI
     } catch (err) {
-      console.log("Error while deleting tag:", err);
+      //.log("Error while deleting tag:", err);
       alert("Failed to delete tag");
     }
   };

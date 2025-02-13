@@ -19,8 +19,8 @@ const NavBar = () => {
   // useEffect(()=> {
   //       setIsLoggedIn(!!token);
   // },[])
-  console.log("token: ", token);
-  console.log("isloggedin", isLoggedIn);
+  //.log("token: ", token);
+  //.log("isloggedin", isLoggedIn);
 
   const handleLogOut = async () => {
     try {
@@ -29,7 +29,7 @@ const NavBar = () => {
       dispatch(logOut());
       navigate("/");
     } catch (err) {
-      console.log("error while logout: ", err);
+      //.log("error while logout: ", err);
       toast.error("Something went wrong");
     }
   };

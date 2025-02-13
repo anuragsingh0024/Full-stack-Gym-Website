@@ -29,7 +29,7 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    //  console.log(formData)
+    //  //.log(formData)
   };
 
   const handleSubmit = async (e) => {
@@ -47,13 +47,13 @@ const Contact = () => {
         formData
       );
 
-      //  console.log(formData);
-      console.log(response);
+      //  //.log(formData);
+      //.log(response);
       toast.success(response.data.message);
       setIsSubmiting(false);
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      console.error(err.response?.data?.message || "Error in signup");
+      //.error(err.response?.data?.message || "Error in signup");
       toast.error(err.response?.data?.message || "Error in signup");
       setIsSubmiting(false);
     }

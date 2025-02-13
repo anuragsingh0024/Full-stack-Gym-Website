@@ -34,7 +34,7 @@ const AdminProductManagement = () => {
       setProducts(response.data.allProducts);
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching products:", error);
+      //.error("Error fetching products:", error);
       setIsLoading(false);
     }
   };
@@ -103,7 +103,7 @@ const AdminProductManagement = () => {
           formData
         );
         setIsSubminting(false);
-        console.log(response);
+        //.log(response);
         if (response.data.success) {
           toast.dismiss(loadingToast);
           toast.success(response.data.message);
@@ -119,7 +119,7 @@ const AdminProductManagement = () => {
     } catch (error) {
       toast.dismiss(loadingToast);
       toast.error(error?.response?.data?.message || "Something went wrong");
-      console.error("Error saving product:", error);
+      //.error("Error saving product:", error);
       setIsSubminting(false);
     }
   };
@@ -135,7 +135,7 @@ const AdminProductManagement = () => {
       toast.success("Product deleted successfully");
       fetchProducts();
     } catch (error) {
-      console.error("Error deleting product:", error);
+      //.error("Error deleting product:", error);
       toast.dismiss(toastLoading2);
     }
   };

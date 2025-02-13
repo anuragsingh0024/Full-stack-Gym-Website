@@ -35,7 +35,7 @@ const MembershipsTable = () => {
         { withCredentials: true }
       );
 
-      console.log(response);
+      //.log(response);
       setIsSubmiting(false);
       toast.success(response.data.message);
     } catch (err) {
@@ -56,7 +56,7 @@ const MembershipsTable = () => {
         withCredentials: true,
       });
 
-      console.log(response.data.allUsers);
+      //.log(response.data.allUsers);
       setUser(response.data.allUsers);
       setIsSubmiting(false);
       setIsLoading(false);
@@ -88,12 +88,12 @@ const MembershipsTable = () => {
       setIsSubmitingTag(false);
 
       toast.success("Tag Updated successfully");
-      console.log(response.data);
+      //.log(response.data);
     } catch (err) {
       const errorMessage =
         err.response?.data?.message || err.message || "Something went wrong";
       toast.error(errorMessage);
-      console.log(errorMessage);
+      //.log(errorMessage);
     } finally {
       setIsSubmitingTag(false);
     }
@@ -102,7 +102,7 @@ const MembershipsTable = () => {
 
   useEffect(() => {
     handleUserApi();
-    console.log("user is : ", user);
+    //.log("user is : ", user);
   }, []);
 
   const RendorSection = useCallback(() => {

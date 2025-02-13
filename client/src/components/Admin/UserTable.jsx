@@ -18,10 +18,10 @@ const UsersList = () => {
           withCredentials: true,
         });
         setUsers(response.data.allUsers);
-        console.log(response.data);
+        //.log(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching users:", error);
+        //.error("Error fetching users:", error);
         setIsLoading(false);
       }
     };
@@ -53,7 +53,7 @@ const UsersList = () => {
 
         setUsers(users.filter((us) => us._id !== id));
       } catch (err) {
-        console.log("Error while deleting user: ", err);
+        //.log("Error while deleting user: ", err);
         toast.dismiss(loadingToast);
         toast.error(err?.response?.data?.message || "Failed to delete");
       }

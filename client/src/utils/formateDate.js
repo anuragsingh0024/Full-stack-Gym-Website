@@ -14,7 +14,7 @@ export const formatDate = (mongoDate, options = {}) => {
 
     return date.toLocaleDateString("en-US", { ...defaultOptions, ...options });
   } catch (error) {
-    console.error("Error formatting date:", error);
+    //.error("Error formatting date:", error);
     return "Invalid Date";
   }
 };

@@ -31,11 +31,11 @@ const Trainer = () => {
       const response = await axiosInstance.get("/admin/all-trainers", {
         withCredentials: true,
       });
-      console.log("trainer data: ", response);
+      //.log("trainer data: ", response);
       setTrainers(response.data.allTrainer);
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching trainers:", error);
+      //.error("Error fetching trainers:", error);
       setIsLoading(false);
     }
   };
@@ -110,7 +110,7 @@ const Trainer = () => {
           formData
         );
         setIsSubminting(false);
-        console.log(response);
+        //.log(response);
         if (response.data.success) {
           toast.dismiss(loadingToast);
           toast.success(response.data.message);
@@ -126,7 +126,7 @@ const Trainer = () => {
     } catch (error) {
       toast.dismiss(loadingToast);
       toast.error(error?.response?.data?.message || "Something went wrong");
-      console.error("Error saving trainer:", error);
+      //.error("Error saving trainer:", error);
       setIsSubminting(false);
     }
   };
@@ -142,7 +142,7 @@ const Trainer = () => {
       toast.success("trainer deleted successfully");
       fetchTrainerData();
     } catch (error) {
-      console.error("Error deleting trainer:", error);
+      //.error("Error deleting trainer:", error);
       toast.dismiss(toastLoading2);
     }
   };

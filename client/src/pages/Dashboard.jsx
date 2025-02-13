@@ -27,7 +27,7 @@ const UserDashboard = () => {
       setUserDetails(response.data.user);
       dispatch(setUser(response.data.user));
     } catch (error) {
-      console.log(error);
+      //.log(error);
       toast.error("Authorization Failed, please re-login");
       localStorage.removeItem("token");
       navigate("/auth/signin");
@@ -64,7 +64,7 @@ const UserDashboard = () => {
       setIsEditOpen(false);
       fetchUserData();
     } catch (error) {
-      console.log(error);
+      //.log(error);
       toast.error(error?.response?.data?.message || "Update failed!");
     } finally {
       setIsLoading(false);

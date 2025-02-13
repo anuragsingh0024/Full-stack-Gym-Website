@@ -11,11 +11,11 @@ const SupplementsPage = () => {
     try {
       setIsLoading(true);
       const response = await axiosInstance.get("/admin/all-products");
-      console.log(response);
+      //.log(response);
       setIsLoading(false);
       setSupplimetns(response.data.allProducts);
     } catch (err) {
-      console.log("error while fetching products: ", err);
+      //.log("error while fetching products: ", err);
       setIsLoading(false);
     }
   };

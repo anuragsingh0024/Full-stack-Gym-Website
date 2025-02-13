@@ -16,12 +16,12 @@ const AuthForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
-      console.log("Login Data:", {
+      //.log("Login Data:", {
         email: formData.email,
         password: formData.password,
       });
     } else {
-      console.log("Signup Data:", formData);
+      //.log("Signup Data:", formData);
     }
     // Reset the form after submission
     setFormData({ name: "", email: "", password: "" });

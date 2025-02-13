@@ -19,7 +19,7 @@ const Dashboard = () => {
         "/admin/all-users"
       );
 
-      console.log(response.data.allUsers);
+      // //.log(response.data.allUsers);
       setUser(response.data.allUsers);
       setIsLoading(false);
     } catch (err) {
@@ -39,7 +39,7 @@ const Dashboard = () => {
         "/admin/payments"
       );
 
-      console.log(response.data.allPayments);
+      //.log(response.data.allPayments);
       setTransactions(response.data.allPayments);
       setIsLoading(false);
     } catch (err) {
@@ -61,7 +61,7 @@ const Dashboard = () => {
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.error("Error fetching contact inquiries:", error);
+      //.error("Error fetching contact inquiries:", error);
     }
   };
 
@@ -75,7 +75,7 @@ const Dashboard = () => {
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.error("Error fetching contact inquiries:", error);
+      //.error("Error fetching contact inquiries:", error);
     }
   };
 
@@ -89,7 +89,7 @@ const Dashboard = () => {
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.error("Error fetching contact inquiries:", error);
+      //.error("Error fetching contact inquiries:", error);
     }
   };
 

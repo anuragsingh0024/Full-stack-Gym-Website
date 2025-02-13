@@ -15,13 +15,13 @@ const ContactUsList = () => {
        try{
            setIsDeleting(true)
            const response = await axiosInstance.delete(`/admin/contact/delete-contact/${id}`, {withCredentials: true})
-           console.log(response.data.message)
+          //  //.log(response.data.message)
            toast.success(response.data.message, {id: toastId})
            setContacts(contacts.filter((contact)=> contact._id!==id))
            setIsDeleting(false)
        } catch(err){
         toast.error("Failed to delete message!!", {id: toastId})
-              console.log(err)
+              // //.log(err)
               setIsDeleting(false)
        } finally { setIsDeleting(false)}
   }
@@ -34,7 +34,7 @@ const ContactUsList = () => {
         setContacts(response.data.allContact);
         setIsLoading(false)
       } catch (error) {
-                console.error('Error fetching contact inquiries:', error);
+                // //.error('Error fetching contact inquiries:', error);
                 setIsLoading(false)
       }
     };

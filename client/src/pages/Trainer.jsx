@@ -15,7 +15,7 @@ const Trainer = () => {
       setTrainer(response.data.allTrainer);
       setIsLoading(false);
     } catch (err) {
-      console.log("Error while fetching trainer details: ", err.message);
+      //.log("Error while fetching trainer details: ", err.message);
       setIsLoading(false);
     }
   };
