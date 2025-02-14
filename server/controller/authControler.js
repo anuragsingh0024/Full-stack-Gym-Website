@@ -40,15 +40,7 @@ const signup = async (req, res) => {
       otp,
       otpExpires: otpExpires,
     });
-    //make a entry in db
-    // const newUser = await User.create({
-    //   name,
-    //   email,
-    //   password: hashedPassword,
-    //   resetPasswordToken: otp,
-    //   resetPasswordExpires: otpExpires
-    // });
-
+   
     //send otp mail
     const message = `Your OTP for signup is: ${otp}. It is valid for 10 minutes.`;
     await mailSender(email, "Verify Your Email", otpMail(name, otp));
@@ -122,7 +114,7 @@ export const verifyOtp = async (req, res) => {
     // OTP is valid, clear OTP fields and activate user
     await Otp.findOneAndDelete({ otp }, { new: true });
 
-    const ctaUrl = "http://localhost:5173/auth/signin";
+    const ctaUrl = "https://full-stack-gym-website-ashen.vercel.app/auth/signin";
     await mailSender(
       email,
       "Welcome to our website",
@@ -231,7 +223,7 @@ const resetPassword = async (req, res) => {
       { new: true }
     );
     console.log(updatedDetails);
-    const resetUrl = `http://localhost:5173/auth/reset-password/${resetPasswordToken}`;
+    const resetUrl = `https://full-stack-gym-website-ashen.vercel.app/auth/reset-password/${resetPasswordToken}`;
 
     await mailSender(
       user.email,
