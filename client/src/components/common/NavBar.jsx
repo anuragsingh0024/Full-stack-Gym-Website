@@ -11,26 +11,28 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu toggle
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isLoggingOut, setIsLogginOut] = useState(false)
 
   const { token } = useSelector((state) => state.auth);
   const isLoggedIn = !!token;
   const accountType = JSON.parse(localStorage.getItem("role"));
 
-  // useEffect(()=> {
-  //       setIsLoggedIn(!!token);
-  // },[])
-  //.log("token: ", token);
-  //.log("isloggedin", isLoggedIn);
 
   const handleLogOut = async () => {
     try {
+      setIsLogginOut(true)
+      const loadingToast = toast.loading("Logging out...")
       const { data } = await axiosInstance.delete("/auth/logout");
+      toast.dismiss(loadingToast)
       toast.success(data.message);
+      setIsLogginOut(false)
       dispatch(logOut());
       navigate("/");
     } catch (err) {
       //.log("error while logout: ", err);
       toast.error("Something went wrong");
+      toast.dismiss(loadingToast)
+      setIsLogginOut(false)
     }
   };
 
@@ -69,7 +71,9 @@ const NavBar = () => {
                 hover={"hover:bg-caribbeangreen-400"}
                 text={"Dashboard"}
               />
-              <button onClick={handleLogOut}>
+              <button
+              disabled = {isLoggingOut}
+              onClick={handleLogOut}>
                 <Button
                   color={"bg-button"}
                   hover={"hover:bg-buttonHover"}
