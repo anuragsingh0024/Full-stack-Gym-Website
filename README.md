@@ -5,7 +5,7 @@
 ![GitHub License](https://img.shields.io/github/license/your-username/gym-website)
 ![Deployment Status](https://img.shields.io/badge/deployed-success-green)
 
-🚀 **Live Demo**: [Visit Website](https://full-stack-gym-website-rho.vercel.app)
+🚀 **Live Demo**: [Visit Website](https://full-stack-gym-website-ashen.vercel.app)
 
 ## 📌 Project Overview
 A fully functional **gym management website** built using the **MERN Stack**. This website allows users to:
@@ -60,11 +60,11 @@ npm run dev
 
 ## 📸 Screenshots
 ### 🔹 Home Page
-![Home Page](https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot)
+<p align-item: center ><img src="client/assets/Screenshot 2025-02-14 012044.png" /></p>
 ### 🔹 Dashboard
-![Dashboard](https://via.placeholder.com/800x400.png?text=Dashboard+Screenshot)
+<p align-item: center ><img src="client/assets/Screenshot 2025-02-14 012538.png" /></p>
 ### 🔹 Admin Panel
-![Admin Panel](https://via.placeholder.com/800x400.png?text=Admin+Panel+Screenshot)
+<p align-item: center ><img src="client/assets/Screenshot 2025-02-14 012740.png" /></p>
 
 ## 🛠️ API Endpoints
 ### 🔑 Authentication
@@ -90,7 +90,7 @@ GET /api/v1/supplements  # Get all supplements
 ## 💖 Support & Contributions
 Feel free to **star 🌟 the repo** if you like it! Contributions are welcome via **Pull Requests (PRs)**.
 
-📩 **Contact Me**: [your-email@example.com](mailto:your-email@example.com) | [LinkedIn](https://linkedin.com/in/yourprofile)
+📩 **Contact Me**: [anuragsinghrajput2525@gmail.com](mailto:anuragsinghrajput2525@gmail.com) | [LinkedIn](https://linkedin.com/in/yourprofile)
 
 ---
-**© 2025 Gym Website | Built with ❤️ by Your Name**
+**© 2025 Gym Website | Built with ❤️ by Anurag Singh Rajput**
