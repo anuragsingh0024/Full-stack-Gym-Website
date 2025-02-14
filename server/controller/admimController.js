@@ -152,7 +152,7 @@ export const createProduct = async (req, res) => {
   }
   const isAlreadyExitingProduct = await Product.find({ name: name });
 
-  if (isAlreadyExitingProduct) {
+  if (isAlreadyExitingProduct.length > 0) {
     return res.status(400).json({
       success: false,
       message: "You can't Add multiple product with same name",
